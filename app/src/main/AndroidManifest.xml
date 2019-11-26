@@ -12,6 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".TrainActivity"></activity>
+        <activity android:name=".Trainer1Activity" />
+        <activity android:name=".RewardActivity" />
+        <activity android:name=".QuestActivity" />
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".FitnessActivity" />
         <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,7 +37,7 @@
         <activity android:name=".EditProfileActivity" />
         <activity android:name=".FollowersActivity" />
         <activity android:name=".StoryActivity" />
-        <activity android:name=".AddStoryActivity"></activity>
+        <activity android:name=".AddStoryActivity" />
     </application>
 
 </manifest>
