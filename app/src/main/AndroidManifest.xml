@@ -12,22 +12,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TrainActivity"></activity>
-        <activity android:name=".Trainer1Activity" />
-        <activity android:name=".RewardActivity" />
-        <activity android:name=".QuestActivity" />
-        <activity android:name=".MenuActivity" />
-        <activity android:name=".FitnessActivity" />
-        <activity android:name=".StartActivity">
+        <activity android:name=".AddQuestActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".TrainActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Trainer1Activity" android:screenOrientation="portrait"/>
+        <activity android:name=".RewardActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".QuestActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".MenuActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".FitnessActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".StartActivity" android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".LoginActivity"  />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity" android:screenOrientation="portrait" />
         <activity android:name=".PostActivity" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
