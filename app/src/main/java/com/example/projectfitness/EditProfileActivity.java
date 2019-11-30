@@ -121,7 +121,6 @@ public class EditProfileActivity extends AppCompatActivity {
     private void updateProfile(String fullname, String username, String bio){
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Users").child(firebaseUser.getUid());
-
         HashMap<String, Object> map = new HashMap<>();
         map.put("fullname", fullname);
         map.put("username", username);

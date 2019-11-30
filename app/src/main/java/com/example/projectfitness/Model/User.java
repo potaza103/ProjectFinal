@@ -6,13 +6,15 @@ public class User {
     private String fullname;
     private String imageurl;
     private String bio;
+    private String point;
 
-    public User(String id, String username, String fullname, String imageurl, String bio) {
+    public User(String id, String username, String fullname, String imageurl, String bio, String point) {
         this.id = id;
         this.username = username;
         this.fullname = fullname;
         this.imageurl = imageurl;
         this.bio = bio;
+        this.point = point;
     }
 
     public User() {
@@ -56,5 +58,13 @@ public class User {
 
     public void setBio(String bio) {
         this.bio = bio;
+    }
+
+    public String getPoint() {
+        return point;
+    }
+
+    public void setPoint(String point) {
+        this.point = point;
     }
 }
