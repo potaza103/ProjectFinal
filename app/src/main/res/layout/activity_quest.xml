@@ -66,49 +66,61 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="21dp"
-                android:text="Level 1"
+                android:text="Level "
                 android:textColor="@color/navyBlue"
-                android:textSize="20sp" />
+                android:textSize="30sp" />
+
 
             <TextView
-                android:id="@+id/email"
-                android:layout_width="382dp"
+                android:id="@+id/level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="104dp"
+                android:layout_marginTop="21dp"
+                android:textColor="@color/navyBlue"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/mission"
+                android:layout_width="360dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="58dp"
+                android:layout_marginTop="80dp"
                 android:layout_marginEnd="13dp"
                 android:background="@drawable/edittext_background"
+                android:textColor="@color/navyBlue"
                 android:gravity="center"
-                android:hint="ภารกิจ"
                 android:padding="10dp"
-                android:textSize="25sp" />
+                android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/email111"
-                android:layout_width="158dp"
+                android:id="@+id/count"
+                android:layout_width="127dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="128dp"
-                android:layout_marginEnd="221dp"
+                android:layout_marginTop="160dp"
+                android:layout_marginEnd="210dp"
                 android:background="@drawable/edittext_background"
                 android:gravity="center"
-                android:hint="จำนวน"
+                android:textColor="@color/navyBlue"
                 android:padding="10dp"
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/email2"
+                android:id="@+id/time"
                 android:layout_width="128dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="128dp"
-                android:layout_marginEnd="60dp"
+                android:layout_marginTop="160dp"
+                android:layout_marginEnd="40dp"
                 android:background="@drawable/edittext_background"
                 android:gravity="center"
-                android:hint="เวลา"
+                android:textColor="@color/navyBlue"
                 android:padding="10dp"
                 android:textSize="20sp" />
 
@@ -119,265 +131,53 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:layout_marginTop="211dp"
+                android:layout_marginTop="240dp"
                 android:layout_marginEnd="23dp"
                 app:srcCompat="@android:color/holo_red_dark" />
 
             <TextView
-                android:id="@+id/textView181"
+                android:id="@+id/point"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="123dp"
-                android:layout_marginTop="223dp"
-                android:text="แต้ม"
+                android:layout_marginStart="110dp"
+                android:layout_marginTop="245dp"
                 android:textColor="@color/navyBlue"
-                android:textSize="20sp" />
+                android:textSize="25sp" />
 
             <ImageButton
                 android:id="@+id/imageButton2"
-                android:layout_width="54dp"
+                android:layout_width="51dp"
                 android:layout_height="48dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="273dp"
-                android:layout_marginTop="210dp"
+                android:layout_marginStart="240dp"
+                android:layout_marginTop="240dp"
                 app:srcCompat="@android:color/holo_green_dark" />
 
             <ImageView
                 android:id="@+id/imageView11"
-                android:layout_width="45dp"
-                android:layout_height="50dp"
+                android:layout_width="56dp"
+                android:layout_height="60dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="56dp"
-                android:layout_marginTop="207dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="230dp"
                 app:srcCompat="@android:drawable/btn_star_big_on" />
+
+
+
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="279dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="555dp"
                 android:background="@color/colorAccent" />
-
-            <TextView
-                android:id="@+id/email1"
-                android:layout_width="382dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="347dp"
-                android:layout_marginEnd="11dp"
-                android:background="@drawable/edittext_background"
-                android:gravity="center"
-                android:hint="ภารกิจ"
-                android:padding="10dp"
-                android:textSize="25sp" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="-1dp"
-                android:layout_marginTop="582dp"
-                android:background="@color/colorAccent" />
-
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="17dp"
-                android:layout_marginTop="310dp"
-                android:text="Level 2"
-                android:textColor="@color/navyBlue"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/email21"
-                android:layout_width="128dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="417dp"
-                android:layout_marginEnd="58dp"
-                android:background="@drawable/edittext_background"
-                android:gravity="center"
-                android:hint="เวลา"
-                android:padding="10dp"
-                android:textSize="20sp" />
-
-            <ImageView
-                android:id="@+id/imageView111"
-                android:layout_width="45dp"
-                android:layout_height="50dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="58dp"
-                android:layout_marginTop="496dp"
-                app:srcCompat="@android:drawable/btn_star_big_on" />
-
-            <TextView
-                android:id="@+id/textView1811"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="125dp"
-                android:layout_marginTop="512dp"
-                android:text="แต้ม"
-                android:textColor="@color/navyBlue"
-                android:textSize="20sp" />
-
-            <ImageButton
-                android:id="@+id/imageButton21"
-                android:layout_width="54dp"
-                android:layout_height="48dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="275dp"
-                android:layout_marginTop="499dp"
-                app:srcCompat="@android:color/holo_green_dark" />
-
-            <ImageButton
-                android:id="@+id/imageButton31"
-                android:layout_width="51dp"
-                android:layout_height="49dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_marginTop="500dp"
-                android:layout_marginEnd="21dp"
-                app:srcCompat="@android:color/holo_red_dark" />
-
-            <TextView
-                android:id="@+id/email11"
-                android:layout_width="158dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="417dp"
-                android:layout_marginEnd="219dp"
-                android:background="@drawable/edittext_background"
-                android:gravity="center"
-                android:hint="จำนวน"
-                android:padding="10dp"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/email4"
-                android:layout_width="382dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="653dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/edittext_background"
-                android:gravity="center"
-                android:hint="ภารกิจ"
-                android:padding="10dp"
-                android:textSize="25sp" />
-
-            <TextView
-                android:id="@+id/email1141"
-                android:layout_width="158dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="723dp"
-                android:layout_marginEnd="218dp"
-                android:background="@drawable/edittext_background"
-                android:gravity="center"
-                android:hint="จำนวน"
-                android:padding="10dp"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/email24"
-                android:layout_width="128dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="723dp"
-                android:layout_marginEnd="57dp"
-                android:background="@drawable/edittext_background"
-                android:gravity="center"
-                android:hint="เวลา"
-                android:padding="10dp"
-                android:textSize="20sp" />
-
-            <ImageView
-                android:id="@+id/imageView141"
-                android:layout_width="45dp"
-                android:layout_height="50dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="59dp"
-                android:layout_marginTop="802dp"
-                app:srcCompat="@android:drawable/btn_star_big_on" />
-
-            <TextView
-                android:id="@+id/textView1841"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="126dp"
-                android:layout_marginTop="818dp"
-                android:text="แต้ม"
-                android:textColor="@color/navyBlue"
-                android:textSize="20sp" />
-
-            <ImageButton
-                android:id="@+id/imageButton42"
-                android:layout_width="54dp"
-                android:layout_height="48dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="276dp"
-                android:layout_marginTop="805dp"
-                app:srcCompat="@android:color/holo_green_dark" />
-
-            <ImageButton
-                android:id="@+id/imageButton43"
-                android:layout_width="51dp"
-                android:layout_height="49dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_marginTop="806dp"
-                android:layout_marginEnd="20dp"
-                app:srcCompat="@android:color/holo_red_dark" />
-
-            <TextView
-                android:id="@+id/textView148"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="18dp"
-                android:layout_marginTop="616dp"
-                android:text="Level 3"
-                android:textColor="@color/navyBlue"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/textView21"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="7dp"
-                android:layout_marginTop="900dp" />
 
 
         </RelativeLayout>
