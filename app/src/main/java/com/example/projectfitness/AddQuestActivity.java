@@ -1,9 +1,7 @@
 package com.example.projectfitness;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -16,7 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.projectfitness.Adapter.TrainerAdapter;
 import com.example.projectfitness.Model.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -26,7 +23,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.sql.CallableStatement;
 import java.util.HashMap;
 
 public class AddQuestActivity extends AppCompatActivity {
@@ -87,11 +83,12 @@ public class AddQuestActivity extends AppCompatActivity {
                 final String str_count = count.getText().toString();
                 final String str_time = time.getText().toString();
 
-                if (TextUtils.isEmpty(str_level) || TextUtils.isEmpty(str_point) || TextUtils.isEmpty(str_mission) || TextUtils.isEmpty(str_count)
+                if (TextUtils.isEmpty(str_level) ||  TextUtils.isEmpty(str_mission) || TextUtils.isEmpty(str_count)
                         || TextUtils.isEmpty(str_time)){
                     Toast.makeText(getApplication(),"All fields are required!",Toast.LENGTH_LONG).show();
                 }else {
-                    addQuest(uid, str_level, str_mission, str_count, str_time, str_point);
+                    Integer point = Integer.valueOf(str_point);
+                    addQuest(uid, str_level, str_mission, str_count, str_time, point);
 //                    addPoint(uid, str_point);
                     Toast.makeText(getApplication(),"AddQuest-Success",Toast.LENGTH_LONG).show();
                     finish();
@@ -101,7 +98,7 @@ public class AddQuestActivity extends AppCompatActivity {
         userInfo(uid);
     }
 
-    private void addQuest(String uid, String level, String mission, String count, String time, String point){
+    private void addQuest(String uid, String level, String mission, String count, String time, int point){
         //test.setText(uid+level+point+mission+count+time);
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Quest").child(uid);

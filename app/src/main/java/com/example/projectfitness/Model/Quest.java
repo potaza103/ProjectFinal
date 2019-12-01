@@ -2,12 +2,12 @@ package com.example.projectfitness.Model;
 
 public class Quest {
     private String level;
-    private String point;
+    private int point;
     private String mission;
     private String count;
     private String time;
 
-    public Quest(String level, String point, String mission, String count, String time) {
+    public Quest(String level, int point, String mission, String count, String time) {
         this.level = level;
         this.mission = mission;
         this.count = count;
@@ -50,11 +50,11 @@ public class Quest {
         this.time = time;
     }
 
-    public String getPoint() {
+    public int getPoint() {
         return point;
     }
 
-    public void setPoint(String point) {
+    public void setPoint(int point) {
         this.point = point;
     }
 }

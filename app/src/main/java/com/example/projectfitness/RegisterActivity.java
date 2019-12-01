@@ -28,8 +28,9 @@ public class RegisterActivity extends AppCompatActivity {
     Button register;
     TextView txt_login;
 
+    FirebaseUser firebaseUser;
     FirebaseAuth auth;
-    DatabaseReference reference;
+    DatabaseReference reference,reference1;
     ProgressDialog pd;
 
     @Override
@@ -74,6 +75,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
 
     public void register(final String username, final String fullname, String email, String password){
@@ -85,6 +87,17 @@ public class RegisterActivity extends AppCompatActivity {
                             FirebaseUser firebaseUser = auth.getCurrentUser();
                             String userID = firebaseUser.getUid();
 
+
+                            reference1 = FirebaseDatabase.getInstance().getReference("Quest").child(userID);
+                            HashMap<String, Object> add = new HashMap<>();
+                            add.put("level","");
+                            add.put("mission","");
+                            add.put("count","");
+                            add.put("time","");
+                            add.put("point",0);
+                            reference1.updateChildren(add);
+
+
                             reference = FirebaseDatabase.getInstance().getReference().child("Users").child(userID);
                             HashMap<String, Object> map = new HashMap<>();
                             map.put("id", userID);
@@ -92,6 +105,9 @@ public class RegisterActivity extends AppCompatActivity {
                             map.put("fullname", fullname);
                             map.put("imageurl", "https://firebasestorage.googleapis.com/v0/b/instagramtest-fcbef.appspot.com/o/placeholder.png?alt=media&token=b09b809d-a5f8-499b-9563-5252262e9a49");
                             map.put("bio", "");
+                            map.put("points",0);
+
+
 
                             reference.setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
@@ -101,6 +117,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                         startActivity(intent);
+
                                     }
                                 }
                             });
@@ -110,5 +127,8 @@ public class RegisterActivity extends AppCompatActivity {
                         }
                     }
                 });
+
     }
+
+
 }

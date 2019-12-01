@@ -6,15 +6,15 @@ public class User {
     private String fullname;
     private String imageurl;
     private String bio;
-    private String point;
+    private int points;
 
-    public User(String id, String username, String fullname, String imageurl, String bio, String point) {
+    public User(String id, String username, String fullname, String imageurl, String bio, int points) {
         this.id = id;
         this.username = username;
         this.fullname = fullname;
         this.imageurl = imageurl;
         this.bio = bio;
-        this.point = point;
+        this.points = points;
     }
 
     public User() {
@@ -22,6 +22,14 @@ public class User {
 
     public String getId() {
         return id;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoint(int points) {
+        this.points = points;
     }
 
     public void setId(String id) {
@@ -60,11 +68,5 @@ public class User {
         this.bio = bio;
     }
 
-    public String getPoint() {
-        return point;
-    }
 
-    public void setPoint(String point) {
-        this.point = point;
-    }
 }

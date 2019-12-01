@@ -73,12 +73,15 @@
 
             <TextView
                 android:id="@+id/level"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="104dp"
+                android:layout_marginStart="93dp"
                 android:layout_marginTop="21dp"
+                android:background="@drawable/edittext_background"
+                android:gravity="center"
+                android:padding="1dp"
                 android:textColor="@color/navyBlue"
                 android:textSize="30sp" />
 
@@ -98,21 +101,21 @@
 
             <TextView
                 android:id="@+id/count"
-                android:layout_width="127dp"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="160dp"
-                android:layout_marginEnd="210dp"
+                android:layout_marginEnd="208dp"
                 android:background="@drawable/edittext_background"
                 android:gravity="center"
-                android:textColor="@color/navyBlue"
                 android:padding="10dp"
+                android:textColor="@color/navyBlue"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/time"
-                android:layout_width="128dp"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
@@ -125,7 +128,7 @@
                 android:textSize="20sp" />
 
             <ImageButton
-                android:id="@+id/imageButton3"
+                android:id="@+id/red"
                 android:layout_width="51dp"
                 android:layout_height="49dp"
                 android:layout_alignParentTop="true"
@@ -137,17 +140,20 @@
 
             <TextView
                 android:id="@+id/point"
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="110dp"
                 android:layout_marginTop="245dp"
                 android:textColor="@color/navyBlue"
+                android:background="@drawable/edittext_background"
+                android:padding="1dp"
+                android:gravity="center"
                 android:textSize="25sp" />
 
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/green"
                 android:layout_width="51dp"
                 android:layout_height="48dp"
                 android:layout_alignParentStart="true"
@@ -168,16 +174,65 @@
                 app:srcCompat="@android:drawable/btn_star_big_on" />
 
 
-
-
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="2dp"
-                android:layout_marginTop="555dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="504dp"
                 android:background="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="174dp"
+                android:textColor="@color/navyBlue"
+                android:textSize="20dp"
+                android:text="จำนวน" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="176dp"
+                android:layout_marginEnd="134dp"
+                android:textColor="@color/navyBlue"
+                android:textSize="20dp"
+                android:text="เวลา" />
+
+            <TextView
+                android:id="@+id/test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="34dp"
+                android:layout_marginEnd="145dp" />
+
+            <TextView
+                android:id="@+id/test1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="37dp"
+                android:layout_marginEnd="102dp" />
+
+            <TextView
+                android:id="@+id/test2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="69dp" />
 
 
         </RelativeLayout>
