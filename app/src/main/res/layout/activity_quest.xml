@@ -2,8 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".QuestActivity">
 
     <View
@@ -21,7 +24,7 @@
         android:layout_height="2dp"
         android:layout_alignParentStart="true"
         android:layout_marginStart="-4dp"
-        android:layout_marginTop="142dp"
+        android:layout_marginTop="130dp"
         android:background="@color/colorAccent" />
 
     <android.support.v7.widget.Toolbar
@@ -36,156 +39,143 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="81dp"
+        android:layout_marginTop="75dp"
         android:text="ภารกิจ"
         android:textColor="@color/navyBlue"
         android:textSize="32sp" />
 
 
-    <android.support.v4.widget.NestedScrollView
-        android:layout_width="411dp"
-        android:layout_height="504dp"
+    <TextView
+        android:id="@+id/mission"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="214dp"
+        android:layout_marginEnd="13dp"
+        android:background="@drawable/edittext_background"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textColor="@color/navyBlue"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="155dp"
+        android:text="Level "
+        android:textColor="@color/navyBlue"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/level"
+        android:layout_width="62dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="93dp"
+        android:layout_marginTop="155dp"
+        android:background="@drawable/edittext_background"
+        android:gravity="center"
+        android:padding="1dp"
+        android:textColor="@color/navyBlue"
+        android:textSize="30sp" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="56dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="216dp"
+        android:layout_marginTop="141dp"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
+
+    <TextView
+        android:id="@+id/point"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="287dp"
+        android:layout_marginTop="157dp"
+        android:background="@drawable/edittext_background"
+        android:gravity="center"
+        android:padding="1dp"
+        android:textColor="@color/navyBlue"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/count"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="294dp"
+        android:layout_marginEnd="208dp"
+        android:background="@drawable/edittext_background"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textColor="@color/navyBlue"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="310dp"
+        android:layout_marginEnd="138dp"
+        android:text="เวลา"
+        android:textColor="@color/navyBlue"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="294dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/edittext_background"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textColor="@color/navyBlue"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="308dp"
+        android:text="จำนวน"
+        android:textColor="@color/navyBlue"
+        android:textSize="20dp" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="-4dp"
-        android:layout_marginTop="154dp"
-        android:layout_marginBottom="0dp"
-        android:fillViewport="true">
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="657dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="-1dp"
+        android:background="@color/colorAccent" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView18"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="21dp"
-                android:text="Level "
-                android:textColor="@color/navyBlue"
-                android:textSize="30sp" />
-
-
-            <TextView
-                android:id="@+id/level"
-                android:layout_width="62dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="93dp"
-                android:layout_marginTop="21dp"
-                android:background="@drawable/edittext_background"
-                android:gravity="center"
-                android:padding="1dp"
-                android:textColor="@color/navyBlue"
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/mission"
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="80dp"
-                android:layout_marginEnd="13dp"
-                android:background="@drawable/edittext_background"
-                android:textColor="@color/navyBlue"
-                android:gravity="center"
-                android:padding="10dp"
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/count"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="160dp"
-                android:layout_marginEnd="208dp"
-                android:background="@drawable/edittext_background"
-                android:gravity="center"
-                android:padding="10dp"
-                android:textColor="@color/navyBlue"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/time"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="160dp"
-                android:layout_marginEnd="40dp"
-                android:background="@drawable/edittext_background"
-                android:gravity="center"
-                android:textColor="@color/navyBlue"
-                android:padding="10dp"
-                android:textSize="20sp" />
-
-
-            <TextView
-                android:id="@+id/point"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="287dp"
-                android:layout_marginTop="23dp"
-                android:background="@drawable/edittext_background"
-                android:gravity="center"
-                android:padding="1dp"
-                android:textColor="@color/navyBlue"
-                android:textSize="25sp" />
-
-            <ImageView
-                android:id="@+id/imageView11"
-                android:layout_width="56dp"
-                android:layout_height="60dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="216dp"
-                android:layout_marginTop="7dp"
-                app:srcCompat="@android:drawable/btn_star_big_on" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="1dp"
-                android:layout_marginTop="504dp"
-                android:background="@color/colorAccent" />
-
-            <TextView
-                android:id="@+id/textView20"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="174dp"
-                android:textColor="@color/navyBlue"
-                android:textSize="20dp"
-                android:text="จำนวน" />
-
-            <TextView
-                android:id="@+id/textView21"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="176dp"
-                android:layout_marginEnd="134dp"
-                android:textColor="@color/navyBlue"
-                android:textSize="20dp"
-                android:text="เวลา" />
-
-            <TextView
+    <TextView
                 android:id="@+id/test"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -212,10 +202,42 @@
                 android:layout_marginTop="36dp"
                 android:layout_marginEnd="69dp" />
 
+    <ToggleButton
+        android:id="@+id/btnCount"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
 
-        </RelativeLayout>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="248dp"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/button_start"
+        android:textOff=""
+        android:textOn="" />
 
-    </android.support.v4.widget.NestedScrollView>
+    <ProgressBar
+        android:id="@+id/pbTimer"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="197dp"
+        android:layout_marginBottom="30dp" />
+
+    <TextView
+        android:id="@+id/tvTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="257dp"
+        android:layout_marginBottom="92dp"
+        android:text="0"
+        android:textSize="40sp" />
 
 
 </RelativeLayout>

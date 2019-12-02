@@ -27,7 +27,7 @@ import java.util.HashMap;
 
 public class RewardActivity extends AppCompatActivity {
 
-    TextView Rpoint,test;
+    TextView Rpoint,test,txt_reward1,txt_reward2,txt_reward3,txt_reward4;
     Button button1 ,button2, button3, button4;
     int sum,reward;
     int upoints,i;
@@ -55,8 +55,17 @@ public class RewardActivity extends AppCompatActivity {
         button2 = findViewById(R.id.button2);
         button3 = findViewById(R.id.button3);
         button4 = findViewById(R.id.button4);
+        txt_reward1 = findViewById(R.id.txt_reward1);
+        txt_reward2 = findViewById(R.id.txt_reward2);
+        txt_reward3 = findViewById(R.id.txt_reward3);
+        txt_reward4 = findViewById(R.id.txt_reward4);
         Rpoint = findViewById(R.id.Rpoint);
         test = findViewById(R.id.test);
+
+        txt_reward1.setText("1000");
+        txt_reward2.setText("2500");
+        txt_reward3.setText("4000");
+        txt_reward4.setText("7000");
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
@@ -87,7 +96,7 @@ public class RewardActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         if (passreward.getText().toString().equals("")) {
-                            reward=100;
+                            reward=1000;
                             setReward1(sum);
                             //test.setText(String.valueOf(sum));
                         } else {
@@ -116,7 +125,7 @@ public class RewardActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         if (passreward.getText().toString().equals("")) {
-                            reward=150;
+                            reward=2500;
                             setReward1(sum);
                             //test.setText(String.valueOf(sum));
                         } else {
@@ -143,7 +152,7 @@ public class RewardActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         if (passreward.getText().toString().equals("")) {
-                            reward=200;
+                            reward=4000;
                             setReward1(sum);
                             //test.setText(String.valueOf(sum));
                         } else {
@@ -170,7 +179,7 @@ public class RewardActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         if (passreward.getText().toString().equals("")) {
-                            reward=250;
+                            reward=7000;
                             setReward1(sum);
                             //test.setText(String.valueOf(sum));
                         } else {

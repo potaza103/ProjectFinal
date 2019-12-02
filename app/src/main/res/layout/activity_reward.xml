@@ -55,7 +55,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="14dp"
                 android:layout_marginTop="208dp"
-                app:srcCompat="@drawable/reward" />
+                app:srcCompat="@drawable/ey" />
 
             <ImageView
                 android:id="@+id/imageView6"
@@ -65,7 +65,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="31dp"
-                app:srcCompat="@drawable/reward"
+                app:srcCompat="@drawable/tea"
                 android:padding="5dp"/>
 
             <ImageView
@@ -76,39 +76,36 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="17dp"
                 android:layout_marginTop="373dp"
-                app:srcCompat="@drawable/reward" />
+                app:srcCompat="@drawable/shirts" />
 
             <TextView
-                android:id="@+id/reward1"
+                android:id="@+id/txt_reward1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="83dp"
                 android:layout_marginEnd="174dp"
-                android:text="100"
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textView14"
+                android:id="@+id/txt_reward3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="413dp"
                 android:layout_marginEnd="173dp"
-                android:text="200"
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/txt_reward2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="259dp"
                 android:layout_marginEnd="173dp"
-                android:text="150"
                 android:textSize="20sp" />
 
             <Button
@@ -163,14 +160,13 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/txt_reward4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="592dp"
                 android:layout_marginEnd="170dp"
-                android:text="250"
                 android:textSize="20sp" />
 
             <Button
@@ -192,7 +188,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="552dp"
-                app:srcCompat="@drawable/reward" />
+                app:srcCompat="@drawable/whey" />
 
             <View
                 android:layout_width="match_parent"

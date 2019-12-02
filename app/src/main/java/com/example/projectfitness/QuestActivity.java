@@ -1,15 +1,19 @@
 package com.example.projectfitness;
 
+import android.os.CountDownTimer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.example.projectfitness.Model.Quest;
 import com.example.projectfitness.Model.User;
@@ -27,6 +31,11 @@ public class QuestActivity extends AppCompatActivity {
 
     TextView level, mission, count, time, point, test, test1, test2;
     ImageButton green, red;
+
+    CountDownTimer cdt;
+    TextView tvTimer;
+    ToggleButton btnCount;
+    ProgressBar pbTimer;
 
     DatabaseReference reference,reference1;
     FirebaseUser firebaseUser;
@@ -59,6 +68,42 @@ public class QuestActivity extends AppCompatActivity {
         test = findViewById(R.id.test);
         test1 = findViewById(R.id.test1);
         test2 = findViewById(R.id.test2);
+
+
+        tvTimer = (TextView)findViewById(R.id.tvTimer);
+
+        pbTimer = (ProgressBar)findViewById(R.id.pbTimer);
+        pbTimer.setVisibility(View.INVISIBLE);
+
+
+        btnCount = (ToggleButton)findViewById(R.id.btnCount);
+        btnCount.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton view
+                    , boolean isChecked) {
+                if(isChecked) {
+                    pbTimer.setVisibility(View.VISIBLE);
+
+                    cdt = new CountDownTimer(1000000, 50) {
+                        public void onTick(long millisUntilFinished) {
+                            String strTime = String.format("%.2f"
+                                    , (double)millisUntilFinished / 10000);
+                            tvTimer.setText(String.valueOf(strTime));
+                        }
+
+                        public void onFinish() {
+                            tvTimer.setText("0");
+                            btnCount.setChecked(false);
+                            pbTimer.setVisibility(View.INVISIBLE);
+                        }
+                    }.start();
+                } else {
+                    cdt.cancel();
+                    tvTimer.setText("0");
+                    pbTimer.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Quest").child(firebaseUser.getUid());
