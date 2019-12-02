@@ -29,9 +29,9 @@ public class RewardActivity extends AppCompatActivity {
 
     TextView Rpoint,test;
     Button button1 ,button2, button3, button4;
-    int sum,reword1=100;
+    int sum,reward;
     int upoints,i;
-
+    DatabaseReference reference,reference1,reference2;
     FirebaseUser firebaseUser;
 
     @Override
@@ -58,14 +58,14 @@ public class RewardActivity extends AppCompatActivity {
         Rpoint = findViewById(R.id.Rpoint);
         test = findViewById(R.id.test);
 
-
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
                 Rpoint.setText(String.valueOf(user.getPoints()));
-
+                sum = user.getPoints();
             }
 
             @Override
@@ -87,7 +87,92 @@ public class RewardActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         if (passreward.getText().toString().equals("")) {
-                            setReward1();
+                            reward=100;
+                            setReward1(sum);
+                            //test.setText(String.valueOf(sum));
+                        } else {
+                            Toast.makeText(getApplication(), "Fitnees only!", Toast.LENGTH_LONG).show();
+                        }
+                    }
+
+                });
+                adb.setView(mview);
+                AlertDialog dialog = adb.create();
+                dialog.dismiss();
+                dialog.show();
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final AlertDialog.Builder adb = new AlertDialog.Builder(RewardActivity.this);
+                final View mview = getLayoutInflater().inflate(R.layout.comfirm_reward, null);
+                final EditText passreward = (EditText) mview.findViewById(R.id.passreward);
+                Button confirm = (Button) mview.findViewById(R.id.confirm);
+
+                confirm.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (passreward.getText().toString().equals("")) {
+                            reward=150;
+                            setReward1(sum);
+                            //test.setText(String.valueOf(sum));
+                        } else {
+                            Toast.makeText(getApplication(), "Fitnees only!", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+                adb.setView(mview);
+                AlertDialog dialog = adb.create();
+                dialog.show();
+            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final AlertDialog.Builder adb = new AlertDialog.Builder(RewardActivity.this);
+                final View mview = getLayoutInflater().inflate(R.layout.comfirm_reward, null);
+                final EditText passreward = (EditText) mview.findViewById(R.id.passreward);
+                Button confirm = (Button) mview.findViewById(R.id.confirm);
+
+                confirm.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (passreward.getText().toString().equals("")) {
+                            reward=200;
+                            setReward1(sum);
+                            //test.setText(String.valueOf(sum));
+                        } else {
+                            Toast.makeText(getApplication(), "Fitnees only!", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+                adb.setView(mview);
+                AlertDialog dialog = adb.create();
+                dialog.show();
+            }
+        });
+
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final AlertDialog.Builder adb = new AlertDialog.Builder(RewardActivity.this);
+                final View mview = getLayoutInflater().inflate(R.layout.comfirm_reward, null);
+                final EditText passreward = (EditText) mview.findViewById(R.id.passreward);
+                Button confirm = (Button) mview.findViewById(R.id.confirm);
+
+                confirm.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (passreward.getText().toString().equals("")) {
+                            reward=250;
+                            setReward1(sum);
+                            //test.setText(String.valueOf(sum));
                         } else {
                             Toast.makeText(getApplication(), "Fitnees only!", Toast.LENGTH_LONG).show();
                         }
@@ -101,82 +186,51 @@ public class RewardActivity extends AppCompatActivity {
     }
 
 
-//        button1.setOnClickListener(new View.OnClickListener() {
+    public void setReward1(int sum){
+
+        if(sum >= reward){
+            sum = sum-reward;
+            //test.setText(String.valueOf(sum));
+            Push(sum);
+            Toast.makeText(RewardActivity.this, "Reward redemption is complete!", Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(getApplication(), "Your points is not enough!", Toast.LENGTH_LONG).show();
+        }
+
+//        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+//        reference1 = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+//        reference1.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                if(sum >= reword1) {
+//                    test.setText(String.valueOf(upoints-reword1));
+//                    sum = sum-reword1;
+//                    Toast.makeText(RewardActivity.this, "Reward redemption is complete!", Toast.LENGTH_LONG).show();
 //
-//            final AlertDialog.Builder adb = new AlertDialog.Builder(RewardActivity.this);
-//
-//            public void onClick(View v) {
-//                setReward1();
-//                adb.setTitle("Reward");
-//                adb.setMessage("Do you want to redeem the reward?");
-//                DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        switch(which) {
-//
-//                            case DialogInterface.BUTTON_POSITIVE:
-//
-//                                break;
-//
-//                            case DialogInterface.BUTTON_NEUTRAL:
-//                                // Neutral/Cancel button clicked
-//                                break;
-////                        break;
-//                            //test.setText(String.valueOf(sum));
-//
-//                        }
+//                    //Intent intent = new Intent(RewardActivity.this, FitnessActivity.class);
+//                    //startActivity(intent);
+//                    //System.exit(0);
+//                   }else {
+//                        Toast.makeText(getApplication(), "Your points is not enough!", Toast.LENGTH_LONG).show();
 //                    }
-//                };
-//                adb.setPositiveButton("Yes", dialogClickListener);
-//                adb.setNegativeButton("Cancel", dialogClickListener);
-//                AlertDialog dialog = adb.create();
-//                dialog.show();
+//
+//            }
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
 //            }
 //        });
-//    }
-//
-
-
-    public void setReward1(){
-
-        final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                User user = dataSnapshot.getValue(User.class);
-                upoints = (user.getPoints());
-                if(upoints >= reword1) {
-                    test.setText(String.valueOf(upoints-reword1));
-                    HashMap<String, Object> map = new HashMap<>();
-                    map.put("points", upoints-reword1);
-                    reference.updateChildren(map);
-                    //push();
-                    Toast.makeText(RewardActivity.this, "Reward redemption is complete!", Toast.LENGTH_LONG).show();
-                    //Intent intent = new Intent(RewardActivity.this, FitnessActivity.class);
-                    //startActivity(intent);
-                    //System.exit(0);
-                    }else {
-                        Toast.makeText(getApplication(), "Your points is not enough!", Toast.LENGTH_LONG).show();
-                    }
-
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
 
 
     }
 
-//    public void push(){
-//                sum = upoints - reword1;
-//                test.setText(String.valueOf(sum));
-//                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
-//                HashMap<String, Object> map = new HashMap<>();
-//                map.put("points", sum);
-//                reference.updateChildren(map);
-//
-//
-//        }
+    public void Push(int sum){
+                //test.setText(String.valueOf(sum));
+                firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                reference2 = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+                HashMap<String, Object> map = new HashMap<>();
+                map.put("points", sum);
+                reference2.updateChildren(map);
+        }
 
 }

@@ -24,14 +24,6 @@ public class User {
         return id;
     }
 
-    public int getPoints() {
-        return points;
-    }
-
-    public void setPoint(int points) {
-        this.points = points;
-    }
-
     public void setId(String id) {
         this.id = id;
     }
@@ -66,6 +58,14 @@ public class User {
 
     public void setBio(String bio) {
         this.bio = bio;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
     }
 
 
