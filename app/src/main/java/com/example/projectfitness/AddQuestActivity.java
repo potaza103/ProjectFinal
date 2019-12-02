@@ -1,6 +1,7 @@
 package com.example.projectfitness;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,7 +31,7 @@ public class AddQuestActivity extends AppCompatActivity {
     ImageView image_profile;
     TextView username,test;
     EditText level, point, mission, count, time;
-    Button comfirm;
+    Button comfirm,viewQ;
 
     DatabaseReference reference;
     FirebaseUser firebaseUser;
@@ -63,6 +64,7 @@ public class AddQuestActivity extends AppCompatActivity {
         count = findViewById(R.id.count);
         time = findViewById(R.id.time);
         comfirm = findViewById(R.id.comfirm);
+        viewQ = findViewById(R.id.viewQ);
 
 
         SharedPreferences prefs = getApplicationContext().getSharedPreferences("PREFS", MODE_PRIVATE);
@@ -90,9 +92,19 @@ public class AddQuestActivity extends AppCompatActivity {
                     Integer point = Integer.valueOf(str_point);
                     addQuest(uid, str_level, str_mission, str_count, str_time, point);
 //                    addPoint(uid, str_point);
+                    //viewQuest(uid);
                     Toast.makeText(getApplication(),"AddQuest-Success",Toast.LENGTH_LONG).show();
                     finish();
                 }
+            }
+        });
+
+        viewQ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddQuestActivity.this, ViewQuestActivity.class);
+                intent.putExtra("Userid", uid);
+                startActivity(intent);
             }
         });
         userInfo(uid);
@@ -111,6 +123,12 @@ public class AddQuestActivity extends AppCompatActivity {
         reference.updateChildren(map);
 
     }
+
+//    private void viewQuest(String uid){
+//        reference = FirebaseDatabase.getInstance().getReference("Users").child(uid);
+//
+//
+//    }
 
 //    private void addPoint(String uid, String point){
 //

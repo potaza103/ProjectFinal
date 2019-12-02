@@ -53,8 +53,8 @@
 
             <TextView
                 android:id="@+id/username"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="165dp"
+                android:layout_height="match_parent"
                 android:gravity="left"
                 android:maxLines="1"
                 android:padding="8dp"
@@ -198,12 +198,25 @@
         android:id="@+id/comfirm"
         android:layout_width="123dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="47dp"
-        android:textColor="@color/navyBlue"
+        android:layout_marginStart="58dp"
+        android:layout_marginBottom="46dp"
         android:background="@drawable/button_background"
-        android:text="Comfirm" />
+        android:text="Comfirm"
+        android:textColor="@color/navyBlue" />
+
+    <Button
+        android:id="@+id/viewQ"
+        android:layout_width="123dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="47dp"
+        android:background="@drawable/button_background"
+        android:text="View"
+        android:textColor="@color/navyBlue" />
 
     <TextView
         android:id="@+id/test"

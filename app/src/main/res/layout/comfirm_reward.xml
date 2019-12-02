@@ -8,32 +8,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Cancel"
+        android:text="Reward"
         android:textColor="@color/navyBlue"
         android:layout_marginTop="5dp"
         android:textSize="30dp" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Do you want to cancel the quest?"
-        android:textColor="@color/navyBlue"
-        android:layout_marginTop="5dp"
-        android:textSize="20dp" />
 
-
-<!--    <EditText-->
-<!--        android:id="@+id/cpass"-->
-<!--        android:layout_width="300dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="10dp"-->
-<!--        android:layout_marginTop="30dp"-->
-<!--        android:background="@drawable/edittext_background"-->
-<!--        android:gravity="center"-->
-<!--        android:hint="Password"-->
-<!--        android:inputType="textPassword"-->
-<!--        android:padding="10dp" />-->
+    <EditText
+            android:id="@+id/passreward"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/edittext_background"
+            android:gravity="center"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="10dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -47,7 +38,7 @@
 
 
         <Button
-            android:id="@+id/cconfirm"
+            android:id="@+id/confirm"
             android:layout_width="100dp"
             android:layout_marginStart="105dp"
             android:layout_height="wrap_content"
