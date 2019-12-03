@@ -100,7 +100,7 @@ public class QuestActivity extends AppCompatActivity {
         btnCount.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton view
                     , boolean isChecked) {
-                if(isChecked) {
+                if(isChecked && numtime != 0) {
                     pbTimer.setVisibility(View.VISIBLE);
 
                     cdt = new CountDownTimer(60000*numtime, 1000) {
@@ -119,7 +119,14 @@ public class QuestActivity extends AppCompatActivity {
                             pbTimer.setVisibility(View.INVISIBLE);
                         }
                     }.start();
-                } else {
+                }
+
+                else if(numtime==0){
+                    //cdt.cancel();
+                    tvTimer.setText("Start");
+                    tvTimer.setTextColor(Color.parseColor("#FF0000"));
+                    pbTimer.setVisibility(View.INVISIBLE);
+                }else{
                     cdt.cancel();
                     tvTimer.setText("Stop");
                     tvTimer.setTextColor(Color.parseColor("#FF0000"));
