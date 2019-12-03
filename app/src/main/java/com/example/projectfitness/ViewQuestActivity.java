@@ -101,7 +101,7 @@ public class ViewQuestActivity extends AppCompatActivity {
                             Qpoint=0;
                             getPoints(uid);
                             getSum(uid);
-                            Toast.makeText(getApplication(), "Confirm Success!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplication(), "Confirm Quest Success!", Toast.LENGTH_LONG).show();
                             finish();
                         //} else {
                            // Toast.makeText(getApplication(), "Trainer only!", Toast.LENGTH_LONG).show();
@@ -137,7 +137,7 @@ public class ViewQuestActivity extends AppCompatActivity {
                             map.put("time", 0);
                             map.put("point", 0);
                             reference.updateChildren(map);
-                            Toast.makeText(getApplication(), "Cancel Success!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplication(), "Cancel Quest Success!", Toast.LENGTH_LONG).show();
                             finish();
                         //} else {
                             //Toast.makeText(getApplication(), "Trainer only!", Toast.LENGTH_LONG).show();
