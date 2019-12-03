@@ -131,9 +131,9 @@ public class ViewQuestActivity extends AppCompatActivity {
                             firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
                             reference = FirebaseDatabase.getInstance().getReference("Quest").child(uid);
                             HashMap<String, Object> map = new HashMap<>();
-                            map.put("level", "");
-                            map.put("mission", "");
-                            map.put("count", "");
+                            map.put("level", "0");
+                            map.put("mission", "ไม่มีภารกิจ");
+                            map.put("count", "0");
                             map.put("time", 0);
                             map.put("point", 0);
                             reference.updateChildren(map);
@@ -209,9 +209,9 @@ public class ViewQuestActivity extends AppCompatActivity {
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Quest").child(uid);
         HashMap<String, Object> map1 = new HashMap<>();
-        map1.put("level", "");
-        map1.put("mission", "");
-        map1.put("count", "");
+        map1.put("level", "0");
+        map1.put("mission", "ไม่มีภารกิจ");
+        map1.put("count", "0");
         map1.put("time", 0);
         map1.put("point", 0);
         reference.updateChildren(map1);
