@@ -81,23 +81,23 @@ public class TrainerAdapter extends RecyclerView.Adapter<TrainerAdapter.ImageVie
             holder.btn_follow.setVisibility(View.GONE);
         }
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+//        holder.itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
 //                if (isFragment) {
 //                    SharedPreferences.Editor editor = mContext.getSharedPreferences("PREFS", MODE_PRIVATE).edit();
 //                    editor.putString("profileid", user.getId());
 //                    editor.apply();
 //
-//                    ((AddQuestActivity) mContext).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-//                           new AppCompatDialogFragment()).commit();
+//                    ((FragmentActivity) mContext).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+//                            new ProfileFragment()).commit();
 //                } else {
-//                    Intent intent = new Intent(mContext, MainActivity.class);
+//                    Intent intent = new Intent(mContext,Trainer1Activity.class);
 //                    intent.putExtra("publisherid", user.getId());
 //                    mContext.startActivity(intent);
 //                }
-            }
-        });
+//            }
+//        });
 
         holder.btn_follow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,7 +107,7 @@ public class TrainerAdapter extends RecyclerView.Adapter<TrainerAdapter.ImageVie
                     intent.putExtra("publisherid", user.getId());
                     mContext.startActivity(intent);
 
-
+                    //addNotification(user.getId());
                 } else {
                     Intent intent = new Intent(mContext, AddQuestActivity.class);
                     intent.putExtra("publisherid", user.getId());

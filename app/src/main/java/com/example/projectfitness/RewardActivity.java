@@ -95,7 +95,7 @@ public class RewardActivity extends AppCompatActivity {
                 confirm.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (passreward.getText().toString().equals("")) {
+                        if (passreward.getText().toString().equals("123456")) {
                             reward=1000;
                             setReward1(sum);
                             //test.setText(String.valueOf(sum));
@@ -124,7 +124,7 @@ public class RewardActivity extends AppCompatActivity {
                 confirm.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (passreward.getText().toString().equals("")) {
+                        if (passreward.getText().toString().equals("123456")) {
                             reward=2500;
                             setReward1(sum);
                             //test.setText(String.valueOf(sum));
@@ -151,7 +151,7 @@ public class RewardActivity extends AppCompatActivity {
                 confirm.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (passreward.getText().toString().equals("")) {
+                        if (passreward.getText().toString().equals("123456")) {
                             reward=4000;
                             setReward1(sum);
                             //test.setText(String.valueOf(sum));
@@ -178,7 +178,7 @@ public class RewardActivity extends AppCompatActivity {
                 confirm.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (passreward.getText().toString().equals("")) {
+                        if (passreward.getText().toString().equals("123456")) {
                             reward=7000;
                             setReward1(sum);
                             //test.setText(String.valueOf(sum));
