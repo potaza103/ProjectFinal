@@ -93,7 +93,7 @@ public class RegisterActivity extends AppCompatActivity {
                             add.put("level","");
                             add.put("mission","");
                             add.put("count","");
-                            add.put("time","");
+                            add.put("time",0);
                             add.put("point",0);
                             reference1.updateChildren(add);
 

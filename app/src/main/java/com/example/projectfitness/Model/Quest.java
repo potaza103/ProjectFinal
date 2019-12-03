@@ -5,9 +5,9 @@ public class Quest {
     private int point;
     private String mission;
     private String count;
-    private String time;
+    private int time;
 
-    public Quest(String level, int point, String mission, String count, String time) {
+    public Quest(String level, int point, String mission, String count, int time) {
         this.level = level;
         this.mission = mission;
         this.count = count;
@@ -42,11 +42,11 @@ public class Quest {
         this.count = count;
     }
 
-    public String getTime() {
+    public int getTime() {
         return time;
     }
 
-    public void setTime(String time) {
+    public void setTime(int time) {
         this.time = time;
     }
 

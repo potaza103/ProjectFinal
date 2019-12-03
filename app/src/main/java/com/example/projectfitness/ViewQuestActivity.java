@@ -75,7 +75,7 @@ public class ViewQuestActivity extends AppCompatActivity {
                 point.setText(String.valueOf(quest.getPoint()));
                 mission.setText(quest.getMission());
                 count.setText(quest.getCount());
-                time.setText(quest.getTime());
+                time.setText(String.valueOf(quest.getTime()));
 
             }
 
@@ -134,7 +134,7 @@ public class ViewQuestActivity extends AppCompatActivity {
                             map.put("level", "");
                             map.put("mission", "");
                             map.put("count", "");
-                            map.put("time", "");
+                            map.put("time", 0);
                             map.put("point", 0);
                             reference.updateChildren(map);
                             Toast.makeText(getApplication(), "Cancel Success!", Toast.LENGTH_LONG).show();
@@ -212,7 +212,7 @@ public class ViewQuestActivity extends AppCompatActivity {
         map1.put("level", "");
         map1.put("mission", "");
         map1.put("count", "");
-        map1.put("time", "");
+        map1.put("time", 0);
         map1.put("point", 0);
         reference.updateChildren(map1);
 

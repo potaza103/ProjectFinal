@@ -83,10 +83,10 @@ public class QuestActivity extends AppCompatActivity {
                 if(isChecked) {
                     pbTimer.setVisibility(View.VISIBLE);
 
-                    cdt = new CountDownTimer(1000000, 50) {
+                    cdt = new CountDownTimer(300000, 1000) {
                         public void onTick(long millisUntilFinished) {
                             String strTime = String.format("%.2f"
-                                    , (double)millisUntilFinished / 10000);
+                                    , (double)millisUntilFinished / 5000);
                             tvTimer.setText(String.valueOf(strTime));
                         }
 
@@ -115,7 +115,7 @@ public class QuestActivity extends AppCompatActivity {
                 point.setText(String.valueOf(quest.getPoint()));
                 mission.setText(quest.getMission());
                 count.setText(quest.getCount());
-                time.setText(quest.getTime());
+                time.setText(String.valueOf(quest.getTime()));
 
             }
 

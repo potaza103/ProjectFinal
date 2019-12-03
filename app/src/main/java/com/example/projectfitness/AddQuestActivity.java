@@ -85,12 +85,13 @@ public class AddQuestActivity extends AppCompatActivity {
                 final String str_count = count.getText().toString();
                 final String str_time = time.getText().toString();
 
-                if (TextUtils.isEmpty(str_level) ||  TextUtils.isEmpty(str_mission) || TextUtils.isEmpty(str_count)
-                        || TextUtils.isEmpty(str_time)){
+                if (TextUtils.isEmpty(str_level) ||  TextUtils.isEmpty(str_mission) ||  TextUtils.isEmpty(str_count) ||
+                TextUtils.isEmpty(str_point) || TextUtils.isEmpty(str_time)){
                     Toast.makeText(getApplication(),"All fields are required!",Toast.LENGTH_LONG).show();
                 }else {
                     Integer point = Integer.valueOf(str_point);
-                    addQuest(uid, str_level, str_mission, str_count, str_time, point);
+                    Integer time = Integer.valueOf(str_time);
+                    addQuest(uid, str_level, str_mission, str_count, time, point);
 //                    addPoint(uid, str_point);
                     //viewQuest(uid);
                     Toast.makeText(getApplication(),"AddQuest-Success",Toast.LENGTH_LONG).show();
@@ -110,7 +111,7 @@ public class AddQuestActivity extends AppCompatActivity {
         userInfo(uid);
     }
 
-    private void addQuest(String uid, String level, String mission, String count, String time, int point){
+    private void addQuest(String uid, String level, String mission, String count, int time, int point){
         //test.setText(uid+level+point+mission+count+time);
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Quest").child(uid);
