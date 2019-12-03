@@ -35,7 +35,7 @@ public class TrainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (pass.getText().toString().equals("")) {
+                if (pass.getText().toString().equals("147963")) {
                     Intent T1=new Intent(TrainActivity.this, Trainer1Activity.class);
                     startActivity(T1);
                     Toast.makeText(getApplication(),"Trainer Success",Toast.LENGTH_LONG).show();

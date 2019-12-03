@@ -1,13 +1,13 @@
 package com.example.projectfitness.Model;
 
 public class Quest {
-    private String level;
+    private int level;
     private int point;
     private String mission;
     private String count;
     private int time;
 
-    public Quest(String level, int point, String mission, String count, int time) {
+    public Quest(int level, int point, String mission, String count, int time) {
         this.level = level;
         this.mission = mission;
         this.count = count;
@@ -18,11 +18,11 @@ public class Quest {
     public Quest() {
     }
 
-    public String getLevel() {
+    public int getLevel() {
         return level;
     }
 
-    public void setLevel(String level) {
+    public void setLevel(int level) {
         this.level = level;
     }
 

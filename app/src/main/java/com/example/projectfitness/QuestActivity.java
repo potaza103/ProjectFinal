@@ -79,7 +79,7 @@ public class QuestActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Quest quest = dataSnapshot.getValue(Quest.class);
-                level.setText(quest.getLevel());
+                level.setText(String.valueOf(quest.getLevel()));
                 point.setText(String.valueOf(quest.getPoint()));
                 mission.setText(quest.getMission());
                 count.setText(quest.getCount());

@@ -22,4 +22,15 @@
         android:layout_alignParentTop="true"
         android:background="?android:attr/windowBackground" />
 
+    <TextView
+        android:id="@+id/test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="211dp"
+        />
+
+
 </RelativeLayout>

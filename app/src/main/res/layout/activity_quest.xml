@@ -97,12 +97,12 @@
 
     <TextView
         android:id="@+id/point"
-        android:layout_width="60dp"
+        android:layout_width="84dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="287dp"
-        android:layout_marginTop="157dp"
+        android:layout_marginStart="276dp"
+        android:layout_marginTop="155dp"
         android:background="@drawable/edittext_background"
         android:gravity="center"
         android:padding="1dp"
@@ -210,8 +210,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="248dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginStart="232dp"
+        android:layout_marginBottom="54dp"
         android:background="@drawable/button_start"
         android:textOff=""
         android:textOn="" />
@@ -224,8 +224,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginEnd="178dp"
-        android:layout_marginBottom="31dp" />
+        android:layout_marginEnd="175dp"
+        android:layout_marginBottom="18dp" />
 
     <TextView
         android:id="@+id/tvTimer"
@@ -234,8 +234,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginEnd="212dp"
-        android:layout_marginBottom="93dp"
+        android:layout_marginEnd="208dp"
+        android:layout_marginBottom="79dp"
         android:text="Time"
         android:textColor="@color/colorGreen"
         android:textSize="40sp" />

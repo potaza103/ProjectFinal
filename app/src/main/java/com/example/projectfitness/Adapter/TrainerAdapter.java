@@ -26,6 +26,7 @@ import com.example.projectfitness.QuestActivity;
 import com.example.projectfitness.R;
 import com.example.projectfitness.StartActivity;
 import com.example.projectfitness.Trainer1Activity;
+import com.example.projectfitness.ViewQuestActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -74,8 +75,8 @@ public class TrainerAdapter extends RecyclerView.Adapter<TrainerAdapter.ImageVie
         holder.btn_follow.setVisibility(View.VISIBLE);
         isFollowing(user.getId(), holder.btn_follow);
 
-        holder.btn_history.setVisibility(View.VISIBLE);
-        isHistory(user.getId(), holder.btn_history);
+        holder.btn_view.setVisibility(View.VISIBLE);
+        isView(user.getId(), holder.btn_view);
 
         holder.username.setText(user.getUsername());
         holder.fullname.setText(user.getFullname());
@@ -83,11 +84,11 @@ public class TrainerAdapter extends RecyclerView.Adapter<TrainerAdapter.ImageVie
 
         if (user.getId().equals(firebaseUser.getUid())){
             holder.btn_follow.setVisibility(View.GONE);
-            holder.btn_history.setVisibility(View.GONE);
+            //holder.btn_history.setVisibility(View.GONE);
         }
-//        if (user.getId().equals(firebaseUser.getUid())){
-//            holder.btn_history.setVisibility(View.GONE);
-//        }
+        if (user.getId().equals(firebaseUser.getUid())){
+            holder.btn_view.setVisibility(View.GONE);
+        }
 
 //        holder.itemView.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -125,17 +126,17 @@ public class TrainerAdapter extends RecyclerView.Adapter<TrainerAdapter.ImageVie
 
         });
 
-        holder.btn_history.setOnClickListener(new View.OnClickListener() {
+        holder.btn_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (holder.btn_history.getText().toString().equals("QUESTS")) {
-                    Intent intent = new Intent(mContext, HistoryQuestActivity.class);
+                if (holder.btn_view.getText().toString().equals("QUESTS")) {
+                    Intent intent = new Intent(mContext, ViewQuestActivity.class);
                     intent.putExtra("publisherid", user.getId());
                     mContext.startActivity(intent);
 
                     //addNotification(user.getId());
                 } else {
-                    Intent intent = new Intent(mContext, HistoryQuestActivity.class);
+                    Intent intent = new Intent(mContext, ViewQuestActivity.class);
                     intent.putExtra("publisherid", user.getId());
                     mContext.startActivity(intent);
                 }
@@ -157,7 +158,7 @@ public class TrainerAdapter extends RecyclerView.Adapter<TrainerAdapter.ImageVie
         public TextView fullname;
         public CircleImageView image_profile;
         public Button btn_follow;
-        public Button btn_history;
+        public Button btn_view;
 
         public ImageViewHolder(View itemView) {
             super(itemView);
@@ -166,7 +167,7 @@ public class TrainerAdapter extends RecyclerView.Adapter<TrainerAdapter.ImageVie
             fullname = itemView.findViewById(R.id.fullname);
             image_profile = itemView.findViewById(R.id.image_profile);
             btn_follow = itemView.findViewById(R.id.btn_follow);
-            btn_history = itemView.findViewById(R.id.btn_history);
+            btn_view = itemView.findViewById(R.id.btn_view);
         }
     }
 
@@ -194,7 +195,7 @@ public class TrainerAdapter extends RecyclerView.Adapter<TrainerAdapter.ImageVie
 
     }
 
-    private void isHistory(final String userid, final Button button){
+    private void isView(final String userid, final Button button){
 
         final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference()
@@ -203,9 +204,9 @@ public class TrainerAdapter extends RecyclerView.Adapter<TrainerAdapter.ImageVie
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.child(userid).exists()){
-                    button.setText("HISTORY");
+                    button.setText("VIEW");
                 } else{
-                    button.setText("HISTORY");
+                    button.setText("VIEW");
                 }
             }
 

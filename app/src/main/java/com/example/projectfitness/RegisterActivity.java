@@ -90,7 +90,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                             reference1 = FirebaseDatabase.getInstance().getReference("Quest").child(userID);
                             HashMap<String, Object> add = new HashMap<>();
-                            add.put("level","0");
+                            add.put("level",0);
                             add.put("mission","ไม่มีภารกิจ");
                             add.put("count","0");
                             add.put("time",0);

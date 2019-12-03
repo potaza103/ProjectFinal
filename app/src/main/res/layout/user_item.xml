@@ -55,7 +55,7 @@
         android:layout_height="30dp"
         android:background="@drawable/button_background"
         android:visibility="gone"
-        android:id="@+id/btn_history"
+        android:id="@+id/btn_view"
         android:textColor="@color/colorPrimary"
         android:layout_marginLeft="185dp"
         android:layout_centerVertical="true"/>

@@ -64,7 +64,7 @@ public class AddQuestActivity extends AppCompatActivity {
         count = findViewById(R.id.count);
         time = findViewById(R.id.time);
         comfirm = findViewById(R.id.comfirm);
-        viewQ = findViewById(R.id.viewQ);
+        //viewQ = findViewById(R.id.viewQ);
 
 
         SharedPreferences prefs = getApplicationContext().getSharedPreferences("PREFS", MODE_PRIVATE);
@@ -88,10 +88,11 @@ public class AddQuestActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(str_level) ||  TextUtils.isEmpty(str_mission) ||  TextUtils.isEmpty(str_count) ||
                 TextUtils.isEmpty(str_point) || TextUtils.isEmpty(str_time)){
                     Toast.makeText(getApplication(),"All fields are required!",Toast.LENGTH_LONG).show();
-                }else {
+                } else{
+                    Integer level = Integer.valueOf(str_level);
                     Integer point = Integer.valueOf(str_point);
                     Integer time = Integer.valueOf(str_time);
-                    addQuest(uid, str_level, str_mission, str_count, time, point);
+                    addQuest(uid, level, str_mission, str_count, time, point);
 //                    addPoint(uid, str_point);
                     //viewQuest(uid);
                     Toast.makeText(getApplication(),"AddQuest-Success",Toast.LENGTH_LONG).show();
@@ -100,18 +101,18 @@ public class AddQuestActivity extends AppCompatActivity {
             }
         });
 
-        viewQ.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AddQuestActivity.this, ViewQuestActivity.class);
-                intent.putExtra("Userid", uid);
-                startActivity(intent);
-            }
-        });
+//        viewQ.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(AddQuestActivity.this, ViewQuestActivity.class);
+//                intent.putExtra("Userid", uid);
+//                startActivity(intent);
+//            }
+//        });
         userInfo(uid);
     }
 
-    private void addQuest(String uid, String level, String mission, String count, int time, int point){
+    private void addQuest(String uid, int level, String mission, String count, int time, int point){
         //test.setText(uid+level+point+mission+count+time);
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Quest").child(uid);

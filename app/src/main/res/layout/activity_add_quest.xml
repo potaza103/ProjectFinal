@@ -194,28 +194,29 @@
         android:gravity="center"
         android:textSize="25dp" />
 
+    <!--    <Button-->
+<!--        android:id="@+id/viewQ"-->
+<!--        android:layout_width="123dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginEnd="50dp"-->
+<!--        android:layout_marginBottom="47dp"-->
+<!--        android:background="@drawable/button_background"-->
+<!--        android:text="View Quest"-->
+<!--        android:textColor="@color/navyBlue" />-->
+
     <Button
         android:id="@+id/comfirm"
         android:layout_width="123dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="58dp"
-        android:layout_marginBottom="46dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="128dp"
+        android:layout_marginBottom="50dp"
         android:background="@drawable/button_background"
-        android:text="Comfirm"
-        android:textColor="@color/navyBlue" />
-
-    <Button
-        android:id="@+id/viewQ"
-        android:layout_width="123dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="47dp"
-        android:background="@drawable/button_background"
-        android:text="View Quest"
+        android:text="Confirm"
         android:textColor="@color/navyBlue" />
 
     <TextView
