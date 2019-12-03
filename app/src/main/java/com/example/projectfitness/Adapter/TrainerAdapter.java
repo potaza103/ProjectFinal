@@ -18,6 +18,7 @@ import com.example.projectfitness.AddQuestActivity;
 import com.example.projectfitness.CommentsActivity;
 import com.example.projectfitness.FitnessActivity;
 import com.example.projectfitness.Fragments.ProfileFragment;
+import com.example.projectfitness.HistoryQuestActivity;
 import com.example.projectfitness.MainActivity;
 import com.example.projectfitness.MenuActivity;
 import com.example.projectfitness.Model.User;
@@ -73,13 +74,20 @@ public class TrainerAdapter extends RecyclerView.Adapter<TrainerAdapter.ImageVie
         holder.btn_follow.setVisibility(View.VISIBLE);
         isFollowing(user.getId(), holder.btn_follow);
 
+        holder.btn_history.setVisibility(View.VISIBLE);
+        isHistory(user.getId(), holder.btn_history);
+
         holder.username.setText(user.getUsername());
         holder.fullname.setText(user.getFullname());
         Glide.with(mContext).load(user.getImageurl()).into(holder.image_profile);
 
         if (user.getId().equals(firebaseUser.getUid())){
             holder.btn_follow.setVisibility(View.GONE);
+            holder.btn_history.setVisibility(View.GONE);
         }
+//        if (user.getId().equals(firebaseUser.getUid())){
+//            holder.btn_history.setVisibility(View.GONE);
+//        }
 
 //        holder.itemView.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -116,6 +124,24 @@ public class TrainerAdapter extends RecyclerView.Adapter<TrainerAdapter.ImageVie
             }
 
         });
+
+        holder.btn_history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (holder.btn_history.getText().toString().equals("QUESTS")) {
+                    Intent intent = new Intent(mContext, HistoryQuestActivity.class);
+                    intent.putExtra("publisherid", user.getId());
+                    mContext.startActivity(intent);
+
+                    //addNotification(user.getId());
+                } else {
+                    Intent intent = new Intent(mContext, HistoryQuestActivity.class);
+                    intent.putExtra("publisherid", user.getId());
+                    mContext.startActivity(intent);
+                }
+            }
+
+        });
     }
 
 
@@ -131,6 +157,7 @@ public class TrainerAdapter extends RecyclerView.Adapter<TrainerAdapter.ImageVie
         public TextView fullname;
         public CircleImageView image_profile;
         public Button btn_follow;
+        public Button btn_history;
 
         public ImageViewHolder(View itemView) {
             super(itemView);
@@ -139,6 +166,7 @@ public class TrainerAdapter extends RecyclerView.Adapter<TrainerAdapter.ImageVie
             fullname = itemView.findViewById(R.id.fullname);
             image_profile = itemView.findViewById(R.id.image_profile);
             btn_follow = itemView.findViewById(R.id.btn_follow);
+            btn_history = itemView.findViewById(R.id.btn_history);
         }
     }
 
@@ -163,6 +191,30 @@ public class TrainerAdapter extends RecyclerView.Adapter<TrainerAdapter.ImageVie
 
             }
         });
+
+    }
+
+    private void isHistory(final String userid, final Button button){
+
+        final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference()
+                .child("Follow").child(firebaseUser.getUid()).child("following");
+        reference1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.child(userid).exists()){
+                    button.setText("HISTORY");
+                } else{
+                    button.setText("HISTORY");
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
     }
 }
 

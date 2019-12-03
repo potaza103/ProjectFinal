@@ -123,7 +123,7 @@ public class QuestActivity extends AppCompatActivity {
 
                 else if(numtime==0){
                     //cdt.cancel();
-                    tvTimer.setText("Start");
+                    tvTimer.setText("Time");
                     tvTimer.setTextColor(Color.parseColor("#FF0000"));
                     pbTimer.setVisibility(View.INVISIBLE);
                 }else{

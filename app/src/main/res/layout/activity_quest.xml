@@ -224,8 +224,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginEnd="197dp"
-        android:layout_marginBottom="30dp" />
+        android:layout_marginEnd="178dp"
+        android:layout_marginBottom="31dp" />
 
     <TextView
         android:id="@+id/tvTimer"
@@ -234,9 +234,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginEnd="232dp"
+        android:layout_marginEnd="212dp"
         android:layout_marginBottom="93dp"
-        android:text="Start"
+        android:text="Time"
         android:textColor="@color/colorGreen"
         android:textSize="40sp" />
 
