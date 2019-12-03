@@ -1,22 +1,18 @@
 package com.example.projectfitness;
 
-import android.os.CountDownTimer;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.example.projectfitness.Model.Quest;
-import com.example.projectfitness.Model.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -25,13 +21,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.HashMap;
+import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 public class QuestActivity extends AppCompatActivity {
 
     TextView level, mission, count, time, point, test, test1, test2;
     ImageButton green, red;
 
+    int numtime;
     CountDownTimer cdt;
     TextView tvTimer;
     ToggleButton btnCount;
@@ -75,36 +73,6 @@ public class QuestActivity extends AppCompatActivity {
         pbTimer = (ProgressBar)findViewById(R.id.pbTimer);
         pbTimer.setVisibility(View.INVISIBLE);
 
-
-        btnCount = (ToggleButton)findViewById(R.id.btnCount);
-        btnCount.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton view
-                    , boolean isChecked) {
-                if(isChecked) {
-                    pbTimer.setVisibility(View.VISIBLE);
-
-                    cdt = new CountDownTimer(300000, 1000) {
-                        public void onTick(long millisUntilFinished) {
-                            String strTime = String.format("%.2f"
-                                    , (double)millisUntilFinished / 5000);
-                            tvTimer.setText(String.valueOf(strTime));
-                        }
-
-                        public void onFinish() {
-                            tvTimer.setText("0");
-                            btnCount.setChecked(false);
-                            pbTimer.setVisibility(View.INVISIBLE);
-                        }
-                    }.start();
-                } else {
-                    cdt.cancel();
-                    tvTimer.setText("0");
-                    pbTimer.setVisibility(View.INVISIBLE);
-                }
-            }
-        });
-
-
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Quest").child(firebaseUser.getUid());
         reference.addValueEventListener(new ValueEventListener() {
@@ -116,6 +84,7 @@ public class QuestActivity extends AppCompatActivity {
                 mission.setText(quest.getMission());
                 count.setText(quest.getCount());
                 time.setText(String.valueOf(quest.getTime()));
+                numtime=quest.getTime();
 
             }
 
@@ -124,6 +93,62 @@ public class QuestActivity extends AppCompatActivity {
 
             }
         });
+
+
+
+        btnCount = (ToggleButton)findViewById(R.id.btnCount);
+        btnCount.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton view
+                    , boolean isChecked) {
+                if(isChecked) {
+                    pbTimer.setVisibility(View.VISIBLE);
+
+                    cdt = new CountDownTimer(60000*numtime, 1000) {
+                        public void onTick(long millisUntilFinished) {
+                            String strTime = String.format(Locale.getDefault(),"%02d:%02d "
+                                    ,TimeUnit.MILLISECONDS.toMinutes( millisUntilFinished) %60,
+                                    TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) %60);
+                                    //TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished)));
+                                    //(double)millisUntilFinished / 5000);
+                            tvTimer.setText(String.valueOf(strTime));
+                        }
+
+                        public void onFinish() {
+                            tvTimer.setText("0");
+                            btnCount.setChecked(false);
+                            pbTimer.setVisibility(View.INVISIBLE);
+                        }
+                    }.start();
+                } else {
+                    cdt.cancel();
+                    tvTimer.setText("Stop");
+                    tvTimer.setTextColor(Color.parseColor("#FF0000"));
+                    numtime=0;
+                    pbTimer.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+
+
+//        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+//        reference = FirebaseDatabase.getInstance().getReference("Quest").child(firebaseUser.getUid());
+//        reference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                Quest quest = dataSnapshot.getValue(Quest.class);
+//                level.setText(quest.getLevel());
+//                point.setText(String.valueOf(quest.getPoint()));
+//                mission.setText(quest.getMission());
+//                count.setText(quest.getCount());
+//                time.setText(String.valueOf(quest.getTime()));
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
 
 //        green.setOnClickListener(new View.OnClickListener() {
 //            @Override
